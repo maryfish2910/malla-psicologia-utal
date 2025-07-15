@@ -1,0 +1,40 @@
+body {
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
+  background: #feeef8;
+  padding: 20px;
+}
+.semestre {
+  margin-bottom: 40px;
+}
+.semestre h2 {
+  margin-bottom: 15px;
+}
+.ramo {
+  display: inline-block;
+  width: 190px;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+  box-sizing: border-box;
+}
+.aprobado {
+  background-color: #f7c8d0; /* rosado */
+  color: #6b2737;
+  text-decoration: line-through;
+}
+.no-aprobado {
+  background-color: #eeeeee; /* gris claro */
+  color: #444;
+  text-decoration: none;
+}
+.bloqueado {
+  background-color: #b0b0b0; /* gris oscuro */
+  color: #555;
+  cursor: not-allowed;
+  text-decoration: none;
+}
