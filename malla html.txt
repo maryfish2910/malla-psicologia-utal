@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Malla Interactiva Psicología Completa</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    padding: 20px;
+  }
+  .semestre {
+    margin-bottom: 40px;
+  }
+  .semestre h2 {
+    margin-bottom: 15px;
+  }
+  .ramo {
+    display: inline-block;
+    width: 190px;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    box-sizing: border-box;
+  }
+  .no-aprobado {
+    background-color: #f7c8d0; /* rosado */
+    color: #6b2737;
+    text-decoration: none;
+  }
+  .aprobado {
+    background-color: #6a4c93; /* morado */
+    color: white;
+    text-decoration: line-through;
+  }
+  .bloqueado {
+    background-color: #b0b0b0; /* gris */
+    color: #555;
+    cursor: not-allowed;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+
+<h1>Malla Interactiva Psicología</h1>
+
+<div class="semestre" id="semestre1">
+  <h2>Semestre 1</h2>
+  <div class="ramo no-aprobado" data-id="HIST_SIS_PSI" data-prereqs="">Historia de la Psicología y Sistemas Psicológicos</div>
+  <div class="ramo no-aprobado" data-id="NEUROBIO_APLI" data-prereqs="">Neurobiología Aplicada a la Psicología</div>
+  <div class="ramo no-aprobado" data-id="PSICO_DES_HUM" data-prereqs="">Psicología del Desarrollo Humano</div>
+  <div class="ramo no-aprobado" data-id="METODO_INV" data-prereqs="">Metodología de la Investigación en Psicología</div>
+  <div class="ramo no-aprobado" data-id="FILOS_PSI" data-prereqs="">Filosofía y Psicología</div>
+  <div class="ramo no-aprobado" data-id="INTRO_PSI_PRAXIS" data-prereqs="">Introducción a la Psicología y su Praxis</div>
+  <div class="ramo no-aprobado" data-id="COM_ORAL_ESCR_I" data-prereqs="">Comunicación Oral y Escrita I</div>
+  <div class="ramo no-aprobado" data-id="IDIOMA_EXTRANJERO_I" data-prereqs="">Idioma Extranjero I</div>
+</div>
+
+<div class="semestre" id="semestre2">
+  <h2>Semestre 2</h2>
+  <div class="ramo no-aprobado bloqueado" data-id="COM_ORAL_ESCR_II" data-prereqs="COM_ORAL_ESCR_I">Comunicación Oral y Escrita II</div>
+  <div class="ramo no-aprobado bloqueado" data-id="PROCESOS_COG_I" data-prereqs="FILOS_PSI">Procesos Cognitivos I</div>
+  <div class="ramo no-aprobado bloqueado" data-id="IDIOMA_EXTRANJERO_II" data-prereqs="IDIOMA_EXTRANJERO_I">Idioma Extranjero II</div>
+  <div class="ramo no-aprobado bloqueado" data-id="TEC_ANAL_ESTAD_PSI_I" data-prereqs="">Técnicas de Análisis Estadístico en Psicología I</div>
+  <div class="ramo no-aprobado" data-id="DEPORTES_I" data-prereqs="">Deportes I</div>
+  <div class="ramo no-aprobado" data-id="DEPORTES_II" data-prereqs="">Deportes II</div>
+</div>
+
+<div class="semestre" id="semestre3">
+  <h2>Semestre 3</h2>
+  <div class="ramo no-aprobado bloqueado" data-id="PSIC_PERSONALIDAD_I" data-prereqs="PSICO_DES_HUM">Psicología de la Personalidad I</div>
+  <div class="ramo no-aprobado bloqueado" data-id="MOTIV_PROC_EMO" data-prereqs="">Motivación y Procesos Emocionales</div>
+  <div class="ramo no-aprobado bloqueado" data-id="PROCESOS_APREND_BAS" data-prereqs="PROCESOS_COG_I">Procesos de Aprendizaje Básico</div>
+  <div class="ramo no-aprobado bloqueado" data-id="EVAL_INTEL_NEUROPSI" data-prereqs="NEUROBIO_APLI">Evaluación de la Inteligencia y Procesos Neuropsicológicos</div>
+  <div class="ramo no-aprobado bloqueado" data-id="PSICO_SOCIAL_I" data-prereqs="METODO_INV">Psicología Social I: Pensamiento Social</div>
+  <div class="ramo no-aprobado bloqueado" data-id="AUTOG_APRENDIZAJE" data-prereqs="">Autogestión del Aprendizaje</div>
+  <div class="ramo no-aprobado bloqueado" data-id="IDIOMA_EXTRANJERO_III" data-prereqs="IDIOMA_EXTRANJERO_II">Idioma Extranjero III</div>
+  <div class="ramo no-aprobado bloqueado" data-id="TEC_ANAL_ESTAD_PSI_II" data-prereqs="TEC_ANAL_ESTAD_PSI_I">Técnicas de Análisis Estadístico en Psicología II</div>
+</div>
+
+<div class="semestre" id="semestre4">
+  <h2>Semestre 4</h2>
+  <div class="ramo no-aprobado bloqueado" data-id="PSIC_PERSONALIDAD_II" data-prereqs="PSICO_DES_HUM">Psicología de la Personalidad II</div>
+  <div class="ramo no-aprobado bloqueado" data-id="MEMORIA_HUMANA" data-prereqs="PROCESOS_APREND_BAS">Memoria Humana</div>
+  <div class="ramo no-aprobado bloqueado" data-id="PSICO_SOCIAL_II" data-prereqs="PSICO_SOCIAL_I">Psicología Social II: Actitudes y Comportamiento</div>
+  <div class="ramo no-aprobado bloqueado" data-id="EVAL_PERSONALIDAD_I" data-prereqs="PSIC_PERSONALIDAD_I">Evaluación de la Personalidad I</div>
+  <div class="ramo no-aprobado bloqueado" data-id="TEC_INTERV_IND" data-prereqs="PSICO_SOCIAL_I">Técnicas de Intervención Individual</div>
+  <div class="ramo no-aprobado bloqueado" data-id="TRABAJO_EQUIPO" data-prereqs="AUTOG_APRENDIZAJE">Trabajo en Equipo y Desarrollo de Habilidades Sociales</div>
+  <div class="ramo no-aprobado bloqueado" data-id="TEORIA_CONSTR_PRUEBAS_I" data-prereqs="TEC_ANAL_ESTAD_PSI_II">Teoría y Construcción de Pruebas Psicológicas I</div>
+</div>
+
+<div class="semestre" id="semestre5">
+  <h2>Semestre 5</h2>
+  <div class="ramo no-aprobado bloqueado" data-id="PSIC_TRABAJO_ORG_I" data-prereqs="PSICO_SOCIAL_II">Psicología del Trabajo y las Organizaciones I</div>
+  <div class="ramo no-aprobado bloqueado" data-id="PSICOPAT_INFANTO_JUV" data-prereqs="PSICO_DES_HUM">Psicopatología Infanto Juvenil</div>
+  <div class="ramo no-aprobado bloqueado" data-id="EVAL_PERSONALIDAD_II" data-prereqs="PSIC_PERSONALIDAD_II">Evaluación de la Personalidad II</div>
+  <div class="ramo no-aprobado bloqueado" data-id="PSICO_SOCIAL_III" data-prereqs="PSICO_SOCIAL_II">Psicología Social III: Grupos, Colectivos y Ambientes</div>
+  <div class="ramo no-aprobado bloqueado" data-id="PROCESOS_COG_II" data-prereqs="MEMORIA_HUMANA">Procesos Cognitivos II</div>
+  <div class="ramo no-aprobado bloqueado" data-id="TEC_RECOLEC_DATOS_CUAL" data-prereqs="METODO_INV">Técnicas de Recolección y Análisis de Datos Cualitativos</div>
+  <div class="ramo no-aprobado bloqueado" data-id="COMP_CONTEXT_SOC" data-prereqs="COM_ORAL_ESCR_II">Comprensión de Contextos Sociales</div>
+  <div class="ramo no-aprobado bloqueado" data-id="TEORIA_CONSTR_PRUEBAS_II" data-prereqs="TEORIA_CONSTR_PRUEBAS_I">Teoría y Construcción de Pruebas Psicológicas II</div>
+</div>
+
+<div class="semestre" id="semestre6">
+  <h2>Semestre 6</h2>
+  <div class="ramo no-aprobado bloqueado" data-id="TEC_INTERV_GRUPAL" data-prereqs="PSICO_SOCIAL_III,TEC_INTERV_IND">Técnicas de Intervención Grupal</div>
+  <div class="ramo no-aprobado bloqueado" data-id="PSIC_TRABAJO_ORG_II" data-prereqs="PSIC_TRABAJO_ORG_I">Psicología del Trabajo y las Organizaciones II</div>
+  <div class="ramo no-aprobado bloqueado" data-id="PSICOPAT_ADULTOS" data-prereqs="PSIC_PERSONALIDAD_II">Psicopatología de Adultos</div>
+  <div class="ramo no-aprobado bloqueado" data-id="PSIC_EDUCACIONAL_I" data-prereqs="PROCESOS_COG_II,PSICO_DES_HUM">Psicología Educacional I</div>
+  <div class="ramo no-aprobado bloqueado" data-id="PSIC_COMUNITARIA" data-prereqs="PSICO_SOCIAL_III">Psicología Comunitaria</div>
+  <div class="ramo no-aprobado bloqueado" data-id="FUND_PSICOTERAPIA_I" data-prereqs="TEC_INTERV_IND">Fundamentos de Psicoterapia I</div>
+  <div class="ramo no-aprobado bloqueado" data-id="MOD_INTEGR_COMP_PSI_INV" data-prereqs="TEORIA_CONSTR_PRUEBAS_II,TEC_RECOLEC_DATOS_CUAL">Módulo I de Integración de Competencias Psicológicas: Investigación</div>
+  <div class="ramo no-aprobado bloqueado" data-id="COMP_CONTEX_CULT" data-prereqs="COMP_CONTEXT_SOC">Comprensión de Contextos Culturales</div>
+</div>
+
+<div class="semestre" id="semestre7">
+  <h2>Semestre 7</h2>
+  <div class="ramo no-aprobado bloqueado" data-id="DESARROLLO_CAMBIO_ORG" data-prereqs="PSIC_TRABAJO_ORG_II">Desarrollo y Cambio Organizacional</div>
+  <div class="ramo no-aprobado bloqueado" data-id="SELECCION_PERSONAS" data-prereqs="EVAL_PERSONALIDAD_II">Selección de Personas</div>
+  <div class="ramo no-aprobado bloqueado" data-id="TALLER_PSICODIAGN" data-prereqs="PSICOPAT_ADULTOS,PSIC_PERSONALIDAD_II">Taller de Psicodiagnóstico y Evaluación</div>
+  <div class="ramo no-aprobado bloqueado" data-id="PSIC_EDUCACIONAL_II" data-prereqs="PSIC_EDUCACIONAL_I">Psicología Educacional II</div>
+  <div class="ramo no-aprobado bloqueado" data-id="INTERV_COMUNITARIA" data-prereqs="PSIC_COMUNITARIA">Intervención Comunitaria</div>
+  <div class="ramo no-aprobado bloqueado" data-id="FUND_PSICOTERAPIA_II" data-prereqs="FUND_PSICOTERAPIA_I">Fundamentos de Psicoterapia II</div>
+  <div class="ramo no-aprobado bloqueado" data-id="ELECTIVO_DISCIPLINAR_I" data-prereqs="">Electivo Disciplinar I</div>
+  <div class="ramo no-aprobado bloqueado" data-id="ETICA_RESP_SOCIAL" data-prereqs="COMP_CONTEX_CULT,TRABAJO_EQUIPO">Ética y Responsabilidad Social</div>
+</div>
+
+<div class="semestre" id="semestre8">
+  <h2>Semestre 8</h2>
+  <div class="ramo no-aprobado bloqueado" data-id="GESTION_ESTRAT_PERSONAS" data-prereqs="DESARROLLO_CAMBIO_ORG">Gestión Estratégica de Personas</div>
+  <div class="ramo no-aprobado bloqueado" data-id="NEUROPSIQUIATRIA_PSICOFARMA" data-prereqs="PSICOPAT_ADULTOS,EVAL_INTEL_NEUROPSI">Neuropsiquiatría y Psicofarmacología</div>
+  <div class="ramo no-aprobado bloqueado" data-id="DESARROLLO_COMP_PROF_ORG" data-prereqs="PSIC_TRABAJO_ORG_II,TEC_INTERV_GRUPAL">Desarrollo de Competencias Profesionales en el Ámbito Organizacional</div>
+  <div class="ramo no-aprobado bloqueado" data-id="PSIC_EDUCACIONAL_III" data-prereqs="PSIC_EDUCACIONAL_II">Psicología Educacional III</div>
+  <div class="ramo no-aprobado bloqueado" data-id="DISENO_EVAL_PROY_SOC" data-prereqs="INTERV_COMUNITARIA">Diseño y Evaluación de Proyectos Sociales</div>
+  <div class="ramo no-aprobado bloqueado" data-id="PSIC_CLINICA_INF_JUV" data-prereqs="PSICOPAT_INFANTO_JUV">Psicología Clínica Infanto Juvenil</div>
+  <div class="ramo no-aprobado bloqueado" data-id="MOD_INTEGR_COMP_PSI_INT" data-prereqs="">Módulo II de Integración de Competencias Psicológicas: Diseño de Intervención</div>
+  <div class="ramo no-aprobado bloqueado" data-id="RESP_SOCIAL" data-prereqs="ETICA_RESP_SOCIAL">Responsabilidad Social</div>
+</div>
+
+<div class="semestre" id="semestre9">
+  <h2>Semestre 9</h2>
+  <div class="ramo no-aprobado bloqueado" data-id="PROYECTO_MEMORIA" data-prereqs="MOD_INTEGR_COMP_PSI_INV">Proyecto de Memoria</div>
+  <div class="ramo no-aprobado bloqueado" data-id="ELECTIVO_FORM_PROF_I" data-prereqs="">Electivo de Formación Profesional I</div>
+  <div class="ramo no-aprobado bloqueado" data-id="ELECTIVO_FORM_PROF_II" data-prereqs="">Electivo de Formación Profesional II</div>
+  <div class="ramo no-aprobado bloqueado" data-id="ELECTIVO_FORM_PROF_III" data-prereqs="">Electivo de Formación Profesional III</div>
+  <div class="ramo no-aprobado bloqueado" data-id="ELECTIVO_FORM_PROF_IV" data-prereqs="">Electivo de Formación Profesional IV</div>
+  <div class="ramo no-aprobado bloqueado" data-id="ELECTIVO_FORM_PROF_V" data-prereqs="">Electivo de Formación Profesional V</div>
+</div>
+
+<div class="semestre" id="semestre10">
+  <h2>Semestre 10</h2>
+  <div class="ramo no-aprobado bloqueado" data-id="MEMORIA" data-prereqs="PROYECTO_MEMORIA">Memoria</div>
+  <div class="ramo no-aprobado bloqueado" data-id="MOD_DESEM_INT_COMP_PRACT_PROF" data-prereqs="">Módulo de Desempeño Integrado de Competencias: Práctica Profesional</div>
+</div>
+
+<script>
+  const ramos = document.querySelectorAll('.ramo');
+
+  function prerrequisitosAprobados(prereqs) {
+    if (!prereqs) return true; // Sin prerrequisitos
+    const prereqIds = prereqs.split(',');
+    return prereqIds.every(id => {
+      const ramo = document.querySelector(`.ramo[data-id="${id.trim()}"]`);
+      return ramo && ramo.classList.contains('aprobado');
+    });
+  }
+
+  function actualizarBloqueos() {
+    ramos.forEach(ramo => {
+      const prereqs = ramo.dataset.prereqs;
+      if (prerrequisitosAprobados(prereqs)) {
+        if (ramo.classList.contains('bloqueado')) {
+          ramo.classList.remove('bloqueado');
+          if (!ramo.classList.contains('aprobado')) {
+            ramo.classList.add('no-aprobado');
+          }
+        }
+      } else {
+        ramo.classList.add('bloqueado');
+        ramo.classList.remove('aprobado', 'no
